@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para las tablas en el primer archivo HTML */
+        .table-container {
+            display: inline-block;
+            vertical-align: top;
+            align-content: center;
+        }
+    </style>
+    <title>Busquedas en Estructura Estática</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Búsquedas en Estructura Estática</h1>
+
+        <!--
+
+        -->
+        <div class="definirContainer">
+            <h2>Definir estructura</h2>
+            <div id="cargarEstructuraPanel" style="display: none;">
+                <label>Se ha encontrado una estructura. ¿Desea cargarla?</label>
+                <p></p>
+                <button id="cargarEstructuraButton">Si</button>
+                <button id="noCargarEstructuraButton">No</button>
+            </div>
+            <p></p>
+            <div id="tamañoEstructuraPanel" style="display: none">
+                <label for="tamañoEstructuraInput">Ingrese el tamaño de la estructura:</label>
+                <input type="number" id="tamañoEstructuraInput" min="1" max="100">
+                <button id="crearEstructuraButton">Crear Estructura</button>
+                <button id="reiniciarEstructuraButton" disabled>Reiniciar estructura</button>
+            </div>
+            <p></p>
+            <div id="tamañoClavePanel" style="display: none;">
+                <label for="tamañoClaveInput">Ingrese la cantidad de digitos de la clave</label>
+                <input type="number" id="tamañoClaveInput" min="1" max="10">
+                <button id="definirLongitudClaveButton">Definir longitud</button>
+            </div>
+            <p></p>
+
+            <div id="insertarClavePanel" style="display: none;">
+                <label for="claveInput">Ingrese una clave:</label>
+                <input type="number" id="claveInput" min="0">
+                <button id="insertarClaveButton">Insertar Clave</button>
+                <button id="eliminarClaveButton">Eliminar clave</button>
+
+            </div>
+            <p></p>
+            
+        </div>
+        <div class="estructuraContainer">
+            <h2>Estructura</h2>
+
+            <div class="table-container">
+                <table id="tabla" style="display: none;">
+                    <tr>
+                        <th colspan="2">Normal</th>
+                    </tr>
+                    <tr>
+                        <th>Índice</th>
+                        <th>Clave</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-container">
+
+                <table id="tablaOrdenada" style="display: none;">
+                    <tr>
+                        <th>Índice</th>
+                        <th>Clave</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="busquedaContainer">
+            <p id="resultado" style="display: none;"></p>
+            <h2>Realizar una búsqueda</h2>
+
+            <div id="busquedaPanel" style="display: none;">
+
+                <input type="radio" id="busquedaSecuencial" name="busqueda" value="secuencial" checked>
+                <label for="busquedaSecuencial">Búsqueda Secuencial</label>
+                <input type="radio" id="busquedaBinaria" name="busqueda" value="binaria">
+                <label for="busquedaBinaria">Búsqueda Binaria</label>
+                <input type="radio" id="busquedaBloques" name="busqueda" value="bloques">
+                <label for="busquedaBloques">Búsqueda por Bloques</label>
+
+                <p></p>
+
+                <label for="claveBusqueda">Ingrese una clave para buscar:</label>
+                <input type="number" id="claveBusqueda" min="0">
+                <button id="buscar">Buscar</button>
+            </div>
+            <p id="resultado" style="display: none;"></p>
+        </div>
+
+    </div>
+
+    </div>
+    <script type="module" src="BusquedasEstaticas.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .table-container {
+            display: inline-block;
+            vertical-align: top;
+            align-content: center;
+        }
+    </style>
+    <title>Transformación de Claves (Hash)</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Transformación de Claves (Hash)</h1>
+        <div class="definirContainer">
+            <h2>Definir estructura</h2>
+            <div id="cargarEstructuraPanel" style="display: none;">
+                <label>Se ha encontrado una estructura. ¿Desea cargarla?</label>
+                <p></p>
+                <button id="cargarEstructuraButton">Si</button>
+                <button id="noCargarEstructuraButton">No</button>
+            </div>
+            <p></p>
+            <div id="seleccionarRangoPanel" style="display: none;">
+                <label for="rango">Seleccione el rango de la estructura:</label>
+                <select id="rango">
+                    <option value="10">10</option>
+                    <option value="100">100</option>
+                    <option value="1000">1000</option>
+                    <option value="10000">10000</option>
+                </select>
+                <button id="elegirRango">Elegir Rango</button>
+                <button id="reiniciar" disabled>Reiniciar</button>
+            </div>
+            <p></p>
+            <div id="tamañoClavePanel" style="display: none;">
+                <label for="tamañoClave">Ingrese la cantidad de digitos de la clave</label>
+                <input type="number" id="tamañoClave" min="1" max="10">
+                <button id="definirLongitudClave">Definir longitud</button>
+            </div>
+            <p></p>
+            <div id="funcionHashPanel" style="display: none;">
+                <label>Seleccione la función hash:</label>
+                <p></p>
+                <input type="radio" id="hashModulo" name="funcionHash" value="modulo">
+                <label for="hashModulo">Hash Módulo</label><br>
+                <input type="radio" id="hashCuadrado" name="funcionHash" value="cuadrado">
+                <label for="hashCuadrado">Hash Cuadrado</label><br>
+                <input type="radio" id="hashTruncamiento" name="funcionHash" value="truncamiento">
+                <label for="hashTruncamiento">Hash Truncamiento</label><br>
+                <input type="radio" id="hashPlegamiento" name="funcionHash" value="plegamiento">
+                <label for="hashPlegamiento">Hash Plegamiento</label><br>
+            </div>
+            <p></p>
+            <div id="solucionColisionPanel" style="display: none;">
+                <label>Seleccione el método de solución de colisiones:</label>
+                <p></p>
+                <input type="radio" id="solucionLineal" name="solucionColision" value="lineal">
+                <label for="solucionLineal">Solución lineal</label><br>
+                <input type="radio" id="solucionCuadratica" name="solucionColision" value="cuadratica">
+                <label for="solucionCuadratica">Solución cuadrática</label><br>
+                <input type="radio" id="solucionDobleHash" name="solucionColision" value="dobleHash">
+                <label for="solucionDobleHash">Solución doble función hash</label><br>
+
+            </div>
+            <p></p>
+            <div id="insercionClavesPanel" style="display: none;">
+                <label for="claveInsertar">Ingrese una clave:</label>
+                <input type="number" id="claveInsertar" min="1">
+                <button id="insertarClave">Insertar Clave</button>
+                <button id="eliminarClave">Eliminar clave</button>
+
+            </div>
+            <p></p>
+        </div>
+
+        <div class="estructuraContainer">
+            <h2>Estructura</h2>
+            <div class="table-container">
+                <table id="tabla" style="display: none;">
+                    <tr>
+                        <th>Índice</th>
+                        <th>Clave</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="busquedaContainer">
+            <h2>Realizar Busqueda</h2>
+            <div id="busquedaPanel" style="display: none;">
+                <label for="claveBusqueda">Ingrese una clave para buscar:</label>
+                <input type="number" id="claveBusqueda" min="0">
+                <button id="buscar">Buscar</button>
+            </div>
+        </div>
+        <div id="colisiones">
+        </div>
+
+
+        <p id="resultado" style="display: none;"></p>
+    </div>
+
+    <script type="module" src="BusquedasHash.js"></script>
+    <script type="module" src="Estructura.js"></script>
+
+</body>
+
+</html>

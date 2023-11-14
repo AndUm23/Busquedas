@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .table-container {
+            width: 100%;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+        }
+    </style>
+    <title>Búsqueda en Estructuras Dinámicas</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Búsqueda en Estructuras Dinámicas</h1>
+        <div class="definirContainer">
+            <h2>Definir estructura</h2>
+            <p></p>
+            <div id="cargarEstructuraPanel" style="display: none;">
+                <label>Se ha encontrado una estructura. ¿Desea cargarla?</label>
+                <p></p>
+                <button id="cargarEstructuraButton">Si</button>
+                <button id="noCargarEstructuraButton">No</button>
+            </div>
+            <p></p>
+            <div id="tipoExpansionDinamicaPanel" style="display: none;">
+                <input type="radio" id="expansionTotalRadio" name="expansion" value="expansionTotal">
+                <label for="expansionTotalRadio">Expansiones totales</label>
+                <input type="radio" id="expansionParcialRadio" name="expansion" value="expansionParcial">
+                <label for="expansionParcialRadio">Expansiones parciales</label>
+            </div>
+            <p></p>
+            <div id="tamañoCubetaPanel" style="display: none;">
+                <label for="cantidadCubetasInput">Ingrese la cantidad de cubetas iniciales: </label>
+                <input type="number" id="cantidadCubetasInput" min="1" max="10">
+                <p></p>
+                <label for="tamañoCubetaInput">Ingrese la cantidad de registros por cubeta: </label>
+                <input type="number" id="tamañoCubetaInput" min="1" max="10">
+                <p></p>
+                <button id="definirTamañoEstructuraButton">Definir tamaño</button>
+
+            </div>
+            <p></p>
+            <div id="densidadesDeOcupacionPanel" style="display: none;">
+                <label for="densidadDeOcupacionExpansionInput">Ingrese la densidad de ocupacion para expandir: </label>
+                <input type="number" id="densidadDeOcupacionExpansionInput" min="1" max="200">
+                <p></p>
+                <label for="densidadDeOcupacionReduccionInput">Ingrese la densidad de ocupación para reducción: </label>
+                <input type="number" id="densidadDeOcupacionReduccionInput" min="1" max="200">
+                <p></p>
+                <button id="definirDensidadesButton">Definir densidades</button>
+
+            </div>
+            <p></p>
+            <div id="tamañoClavePanel" style="display: none;">
+                <label for="tamañoClaveInput">Ingrese la cantidad de digitos de la clave</label>
+                <input type="number" id="tamañoClaveInput" min="1" max="10">
+                <button id="definirLongitudClaveButton">Definir longitud</button>
+            </div>
+            <p></p>
+            <div id="funcionHashPanel" style="display: none;">
+                <label>Seleccione la función hash:</label><br>
+                <input type="radio" id="hashModulo" name="funcionHash" value="modulo">
+                <label for="hashModulo">Hash Módulo</label><br>
+                <input type="radio" id="hashCuadrado" name="funcionHash" value="cuadrado">
+                <label for="hashCuadrado">Hash Cuadrado</label><br>
+                <input type="radio" id="hashTruncamiento" name="funcionHash" value="truncamiento">
+                <label for="hashTruncamiento">Hash Truncamiento</label><br>
+                <input type="radio" id="hashPlegamiento" name="funcionHash" value="plegamiento">
+                <label for="hashPlegamiento">Hash Plegamiento</label><br>
+            </div>
+            <p></p>
+            <div id="crearEstructuraPanel" style="display: none;">
+                <p></p>
+                <button id="crearEstructuraButton">Crear Estructura</button>
+                <button id="reiniciarEstructuraButton">Reiniciar estructura</button>
+            </div>
+            <p></p>
+            <div id="insertarClavePanel" style="display: none;">
+                <label for="insertarClaveInput">Ingrese una clave:</label>
+                <input type="number" id="insertarClaveInput" min="0">
+                <button id="insertarClaveButton">Insertar Clave</button>
+                <button id="eliminarClaveButton">Eliminar clave</button>
+
+            </div>
+            <p></p>
+
+        </div>
+
+        <div class="table-container">
+            <table id="tablaOrdenada" style="display: block;">
+               
+            </table>
+        </div>
+        <p></p>
+
+        <div class="busquedaContainer">
+            <h2>Realizar una búsqueda</h2>
+            <div id="busquedaPanel" style="display: none;">
+                <p></p>
+                <div id="busquedaPanel">
+                    <label for="busquedaClaveInput">Ingrese la clave a buscar:</label>
+                    <input type="number" id="busquedaClaveInput" min="0">
+                    <button id="buscar">Buscar</button>
+                </div>
+                <p></p>
+            </div>
+            <p></p>
+        </div>
+
+
+
+    </div>
+
+    <script type="module" src="BusquedasDinamicas.js"></script>
+    <script type="module" src="Estructura.js"></script>
+
+</body>
+
+</html>

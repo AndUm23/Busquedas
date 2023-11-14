@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .table-container {
+
+            display: inline-block;
+            align-content: center;
+        }
+    </style>
+    <title>Búsqueda Secuencial y Binaria</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Búsqueda Secuencial y Binaria</h1>
+        <div class="definirContainer">
+            <h2>Definir estructura</h2>
+            <div id="cargarEstructuraPanel" style="display: none;">
+                <label>Se ha encontrado una estructura. ¿Desea cargarla?</label>
+                <p></p>
+                <button id="cargarEstructuraButton">Si</button>
+                <button id="noCargarEstructuraButton">No</button>
+            </div>
+            <p></p>
+            <div id="tamanoEstructuraPanel" style="display: none;">
+                <label for="tamaño">Ingrese el tamaño de la estructura: </label>
+                <input type="number" id="tamaño" min="1" max="100">
+                <button id="crearEstructura">Crear Estructura</button>
+                <button id="reiniciar" disabled>Reiniciar estructura</button>
+            </div>
+            <p></p>
+            <div id="tamañoClavePanel" style="display: none;">
+                <label for="tamañoClave">Ingrese la cantidad de digitos de la clave: </label>
+                <input type="number" id="tamañoClave" min="1" max="10">
+                <button id="definirLongitudClave">Definir longitud</button>
+            </div>
+            <p></p>
+            <div id="crearEstructuraPanel" style="display: none;">
+                <p>¿Desea llenar la estructura aleatoriamente?</p>
+                <button id="llenarAleatoriamente">Sí</button>
+                <button id="llenarManualmente">No</button>
+            </div>
+            <p></p>
+            <div id="llenarManualmentePanel" style="display: none;">
+                <label for="clave">Ingrese una clave:</label>
+                <input type="number" id="clave" min="0">
+                <button id="insertarClave">Insertar Clave</button>
+                <button id="eliminarClave" disabled>Eliminar clave</button>
+
+            </div>
+        </div>
+        <div class="estructuraContainer">
+            <h2>Estructura</h2>
+            <div class="table-container">
+                <table id="tablaOrdenada" style="display: none;">
+                    <tr>
+                        <th>Índice</th>
+                        <th>Clave</th>
+                    </tr>
+                </table>
+            </div>
+            
+
+        </div>
+
+        <div class="busquedaContainer">
+            <h2>Realizar una búsqueda</h2> 
+            <div id="realizarBusquedaPanel" style="display: none;">
+                <div id="tipoBusquedaPanel">
+                    <input type="radio" id="busquedaSecuencial" name="busqueda" value="secuencial" checked>
+                    <label for="busquedaSecuencial">Búsqueda Secuencial</label>
+                    <input type="radio" id="busquedaBinaria" name="busqueda" value="binaria">
+                    <label for="busquedaBinaria">Búsqueda Binaria</label>
+                </div>
+                <p></p>
+                <div id="busquedaPanel">
+                    <label for="claveBusqueda">Ingrese la clave a buscar:</label>
+                    <input type="number" id="claveBusqueda" min="0">
+                    <button id="buscar">Buscar</button>
+                </div>
+                <p></p>
+            </div>
+        </div>
+
+        <p></p>
+        <p id="resultado" style="display: none;"></p>
+
+    </div>
+
+    <script type="module" src="BusquedasInternas.js"></script>
+    <script type="module" src="Estructura.js"></script>
+
+</body>
+
+</html>
